@@ -13,5 +13,8 @@ export const useCounterStore = defineStore('counter', {
       });
       this.count = 0;
     },
+  },
+  getters: {
+    sortedByHighestScore: (state) => state.scores.sort((a, b) => b.score - a.score)
   }
 })
