@@ -31,6 +31,9 @@ const startGame = () => {
   <div v-else>
     <div>the game has not started yet</div>
     <div>
+      current best score: {{ store.highScore }}
+    </div>
+    <div>
       <button @click="startGame">Start a game</button>
     </div>
   </div>
