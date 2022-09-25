@@ -16,6 +16,7 @@ const gameTick = () => {
     runGame();
   }
 };
+const reset = () => store.$reset();
 const runGame = () => setTimeout(gameTick, 1000);
 const startGame = () => {
   timer.value = 5;
@@ -30,9 +31,12 @@ const startGame = () => {
   </div>
   <div v-else>
     <div>the game has not started yet</div>
+    <div>current best score: {{ store.highScore }}</div>
+
     <div>
-      current best score: {{ store.highScore }}
+      <button @click="reset">Reset</button>
     </div>
+
     <div>
       <button @click="startGame">Start a game</button>
     </div>
